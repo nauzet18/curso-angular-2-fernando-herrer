@@ -47,3 +47,60 @@ let miFunctionF3 = (a:number, b:number) => {
   let suma = a + b;
   return suma;
 };
+
+//Funciones anonimas en  en objetos.
+let miObjeto = {
+  nombre: "nauzet",
+  saludar: function () {
+    console.log( `Hola ${this.nombre}` );
+  }
+}
+
+miObjeto.saludar();
+
+//Funciones de flecha en objetos.
+let miObjetoF = {
+  nombre: "nauzet",
+  saludar: () =>  console.log( `Hola FF ${this.nombre}` )
+}
+
+miObjetoF.saludar();
+
+//Ejemplo donde al usuar una funcion de flecha, no se pierde el ambito del objeto. Pero con una función anonima si.
+let miObjetoT = {
+  nombre: "nauzet",
+  saludar: function () {
+    //En este punto vemos que la función que se le pasa al setTimeout, no tiene el mismo ambito que la
+    //definición del objeto. Su ambito es el objeto global windows.
+    setTimeout( function(){console.log( `Hola T ${this.nombre}` );}, 1500 )
+  }
+}
+
+miObjetoT.saludar();
+
+let miObjetoTF = {
+  nombre: "nauzet",
+  saludar:  function()  {
+    //En este punto vemos que la función que se le pasa al setTimeout, no tiene el mismo ambito que la
+    //definición del objeto. Su ambito es el objeto global windows.
+    // => Para resolver esto con funcion anonima flecha, el compilador declara una variable en esta función
+    // llamada this y guarda el ambito (this).
+    // ejemplo: var _this = this;
+    setTimeout( ()=> {console.log( `Hola TF ${this.nombre}` );}, 1500 )
+  }
+}
+
+miObjetoTF.saludar();
+
+//Solución al problema del ambito
+let miObjetoTAmbito = {
+  nombre: "nauzet",
+  saludar: function () {
+    //En este punto vemos que la función que se le pasa al setTimeout, no tiene el mismo ambito que la
+    //definición del objeto. Su ambito es el objeto global windows.
+    var ambito = this;
+    setTimeout( function(){console.log( `Hola TAmbito ${ambito.nombre}` );}, 1500 )
+  }
+}
+
+miObjetoTAmbito.saludar();
