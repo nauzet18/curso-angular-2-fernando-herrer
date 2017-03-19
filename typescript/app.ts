@@ -181,3 +181,28 @@ function enviarMisionI( xmen : Xmen)
 //Una cosa curiosa es que no se puede añadir nada al objeto.  Con lo cual parece mas una definicion de tipo que una interfaz donde hay que tner almenos los atributos y metodos de la interfaz.
 let personajeXI:Xmen = { nombre: "Picara", poder: "camuflaje"};
 enviarMisionI( personajeXI );
+
+
+///---------------Clases
+//Las clases se definen como siempre, los atributos se le pueden poner valores por defecto.
+class Persona {
+  nombre:string;
+  apellidos: string;
+  genero:string = "masculino";
+
+  //Un ejemplo de como se hace el constructor
+  constructor( nombre:string, apellidos:string){
+    this.nombre = nombre;
+    this.apellidos = apellidos;
+  }
+
+  //Un ejemplo de como se hace un metoodo
+  public getFullName()
+  {
+    return `${this.nombre} ${this.apellidos}`;
+  }
+}
+
+let yo:Persona = new Persona( "Nauzet", "Melian Batista");
+console.log(yo);
+console.log(yo.getFullName());

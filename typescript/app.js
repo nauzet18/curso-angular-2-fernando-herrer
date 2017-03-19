@@ -93,3 +93,17 @@ function enviarMisionI(xmen) {
 }
 var personajeXI = { nombre: "Picara", poder: "camuflaje" };
 enviarMisionI(personajeXI);
+var Persona = (function () {
+    function Persona(nombre, apellidos) {
+        this.genero = "masculino";
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+    }
+    Persona.prototype.getFullName = function () {
+        return this.nombre + " " + this.apellidos;
+    };
+    return Persona;
+}());
+var yo = new Persona("Nauzet", "Melian Batista");
+console.log(yo);
+console.log(yo.getFullName());
