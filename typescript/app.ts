@@ -104,3 +104,22 @@ let miObjetoTAmbito = {
 }
 
 miObjetoTAmbito.saludar();
+
+//------- desestructuracion de objeros
+//declaro un array con ciertos atributos.
+let averger = {
+  nombre: "Steve",
+  clave: "capitan america",
+  poder: "fuerza"
+}
+//de esta manera podemos savar cada atributo del objeto a una variable.
+//esto es como el list()  de PHP
+
+let {nombre, clave, poder} = averger;
+
+//------- desestructuracion de arrays
+//declaro un array que contiene strings
+let avengers:string[] = ['thor', 'tony', 'hulk'];
+//De esta manera podemos obtener en variables cada elemento del array
+//esto es igual que el list()  de PHP
+let [ dios, ironman, hulk ] = avengers;

@@ -62,3 +62,11 @@ var miObjetoTAmbito = {
     }
 };
 miObjetoTAmbito.saludar();
+var averger = {
+    nombre: "Steve",
+    clave: "capitan america",
+    poder: "fuerza"
+};
+var nombre = averger.nombre, clave = averger.clave, poder = averger.poder;
+var avengers = ['thor', 'tony', 'hulk'];
+var dios = avengers[0], ironman = avengers[1], hulk = avengers[2];
