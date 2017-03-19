@@ -153,3 +153,31 @@ prom1.then( ()=>{
 );
 
 console.log ("paso 2");
+
+
+//--------Interfaces
+//NOTA: Las interfaces no estan soportadas por JS
+//Definimos una funcion q por parametro acepta un objeto y quedemos que tenga unos atributos
+//Ete parametro es casi como definir un tipo. Pero habría que hacerlo en cada función y es un lio.
+function enviarMision( xmen : { nombre:string })
+{
+  console.log(`Enviando a ${ xmen.nombre}`);
+}
+let personajeX = { nombre: "Picara", poder: "camuflaje"};
+enviarMision( personajeX );
+
+//En respuesta a esta problematica, se pueden definir interfaces.
+//Asi se define la interfaz
+interface Xmen {
+  nombre: string,
+  poder: string
+}
+//Asi declaramos un tipo de dato usando la interfaz
+function enviarMisionI( xmen : Xmen)
+{
+  console.log(`Enviando a ${ xmen.nombre}`);
+}
+//ASi definimos una variable usnado el tipo de dato de la interfaz.
+//Una cosa curiosa es que no se puede añadir nada al objeto.  Con lo cual parece mas una definicion de tipo que una interfaz donde hay que tner almenos los atributos y metodos de la interfaz.
+let personajeXI:Xmen = { nombre: "Picara", poder: "camuflaje"};
+enviarMisionI( personajeXI );

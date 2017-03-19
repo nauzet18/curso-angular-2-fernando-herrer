@@ -83,3 +83,13 @@ prom1.then(function () {
     console.error("termino mal");
 });
 console.log("paso 2");
+function enviarMision(xmen) {
+    console.log("Enviando a " + xmen.nombre);
+}
+var personajeX = { nombre: "Picara", poder: "camuflaje" };
+enviarMision(personajeX);
+function enviarMisionI(xmen) {
+    console.log("Enviando a " + xmen.nombre);
+}
+var personajeXI = { nombre: "Picara", poder: "camuflaje" };
+enviarMisionI(personajeXI);
