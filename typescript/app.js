@@ -70,3 +70,16 @@ var averger = {
 var nombre = averger.nombre, clave = averger.clave, poder = averger.poder;
 var avengers = ['thor', 'tony', 'hulk'];
 var dios = avengers[0], ironman = avengers[1], hulk = avengers[2];
+var prom1 = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+        console.log("Promesa terminada");
+        resolve();
+    }, 1500);
+});
+console.log("paso 1");
+prom1.then(function () {
+    console.log("termino bien");
+}, function () {
+    console.error("termino mal");
+});
+console.log("paso 2");

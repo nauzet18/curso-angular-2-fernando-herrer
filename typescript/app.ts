@@ -123,3 +123,33 @@ let avengers:string[] = ['thor', 'tony', 'hulk'];
 //De esta manera podemos obtener en variables cada elemento del array
 //esto es igual que el list()  de PHP
 let [ dios, ironman, hulk ] = avengers;
+
+
+//--------Promesas
+//Dejar claro, que no ha explicado mucho. De donde sale la clase Promise?
+//Despues de leer un poco aqui: https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise
+//Promise es un objeto nuevo de JS, no soportado por IE (que raro...)
+let prom1 = new Promise( function( resolve, reject) {
+  setTimeout( ()=>{
+      console.log("Promesa terminada");
+
+      //habría q poner condiciones para cuando se termine bien o no. por ahora se hace a mano
+      //si termiara bien
+      resolve();
+      //si termiara mal
+      //reject();
+    }
+   , 1500);
+})
+
+console.log ("paso 1");
+
+prom1.then( ()=>{
+  console.log("termino bien");
+},
+() => {
+  console.error("termino mal");
+}
+);
+
+console.log ("paso 2");
