@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class BodyComponent {
   texto:string ="Un pòder es bueno";
   autor:string ="Nauzet";
+  mostrar:boolean = true;
+  personajes:string[] = ['alan', 'jaun', 'tato'];
 }

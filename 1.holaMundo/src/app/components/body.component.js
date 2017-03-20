@@ -13,6 +13,8 @@ var BodyComponent = (function () {
     function BodyComponent() {
         this.texto = "Un pòder es bueno";
         this.autor = "Nauzet";
+        this.mostrar = true;
+        this.personajes = ['alan', 'jaun', 'tato'];
     }
     BodyComponent = __decorate([
         core_1.Component({

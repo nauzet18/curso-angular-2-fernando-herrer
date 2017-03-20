@@ -6,7 +6,15 @@
     <h3>*ngIF</h3>
     <hr>
 
-    <div class="card card-inverse card-primary mb-3 text-center">
+    <button (click)="mostrar = !mostrar"
+            type="button"
+            class="btn btn-outline-primary btn-block">
+      Mostrar / Ocultar
+    </button>
+    <br>
+
+    <div *ngIf="mostrar"
+         class="card card-inverse card-primary mb-3 text-center">
       <div class="card-block">
         <blockquote class="card-blockquote">
           <p>{{texto}}</p>
@@ -20,10 +28,8 @@
     <hr>
 
     <ul class="list-group">
-      <li class="list-group-item">Item 1</li>
-      <li class="list-group-item">Item 2</li>
-      <li class="list-group-item">Item 3</li>
-      <li class="list-group-item">Item 4</li>
+      <li *ngFor="let item of personajes; let i = index"
+          class="list-group-item">{{i+1}} - {{item}}</li>
     </ul>
 
   </div>
