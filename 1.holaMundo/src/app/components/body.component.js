@@ -11,6 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var BodyComponent = (function () {
     function BodyComponent() {
+        this.texto = "Un pòder es bueno";
+        this.autor = "Nauzet";
     }
     BodyComponent = __decorate([
         core_1.Component({
