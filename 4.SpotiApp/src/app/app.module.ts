@@ -12,13 +12,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/share/navbar/navbar.component';
+import { SinfotoPipe } from './pipes/sinfoto.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchComponent,
-    NavbarComponent
+    NavbarComponent,
+    SinfotoPipe
   ],
   imports: [
     BrowserModule,
