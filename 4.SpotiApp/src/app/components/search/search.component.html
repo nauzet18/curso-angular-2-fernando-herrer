@@ -1,3 +1,27 @@
-<p>
-  search works!
-</p>
+<div class="container top30">
+  <div class="row">
+    <div class="col-md-3">
+      <label for="term">Search by artist</label>
+      <input [(ngModel)]="term"
+             name="term" type="text"
+             class="form-control"
+             (keyup)="searchByArtist()"
+             placeholder="Search by artist">
+      <hr>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-3" *ngFor="let artist of _spotifyService.artists">
+          <img class="img-fluid img-thumbnail"
+               [src]="artist.images[1]?.url" alt="">
+        </div>
+      </div>
+      <ul>
+        <li *ngFor="let artist of _spotifyService.artists">
+          {{ artist.name }}
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
