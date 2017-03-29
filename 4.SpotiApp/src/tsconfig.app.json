@@ -15,8 +15,10 @@
     "baseUrl": "",
     "types": []
   },
+  "compileOnSave": false,
   "exclude": [
     "test.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "../node_modules"
   ]
 }
