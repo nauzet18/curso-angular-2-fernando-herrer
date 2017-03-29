@@ -30,4 +30,9 @@ export class AppComponent {
   );
 
   fecha = new Date();
+
+  showHideContrasenna = true;
+  showContrasenna( ) {
+    this.showHideContrasenna = !this.showHideContrasenna;
+  }
 }

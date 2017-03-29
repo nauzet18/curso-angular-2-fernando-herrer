@@ -111,6 +111,19 @@
         <td>  capitalizado  </td>
         <td> {{ nombre2 | capitalizado:false }}</td>
       </tr>
+      <tr>
+        <td> {{nombre2}} </td>
+        <td>
+          contrasenna {{showHideContrasenna}}
+          <br>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="button"
+                  (click) = "showContrasenna()"  >
+                  Show / hide</button>
+        </td>
+        <td>
+          {{ nombre2 | contrasenna:showHideContrasenna }}
+        </td>
+      </tr>
     </tbody>
   </table>
 
@@ -126,6 +139,7 @@
   </pre>
 
   <h3>Iframe youtube</h3>
+<!--
   <iframe width="560" height="315" [src]="codeyoutube| domseguro:'https://www.youtube.com/embed/'" frameborder="0" allowfullscreen></iframe>
-
+-->
 </div>
