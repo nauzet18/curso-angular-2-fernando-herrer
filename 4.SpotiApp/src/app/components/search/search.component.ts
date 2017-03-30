@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
   }
 
   searchByArtist(){
-    this._spotifyService.getArtist(this.term).subscribe();
+    this._spotifyService.getArtists(this.term).subscribe();
   }
 
 }
