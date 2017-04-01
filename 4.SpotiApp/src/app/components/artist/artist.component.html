@@ -1,6 +1,60 @@
-<p>
-  artist works!
-</p>
-<pre>
-{{  artist | json}}
-</pre>
+<div *ngIf="artist" class="container main-container  animated fadeIn fast">
+  <div class="row">
+    <div class="col-md-3 text-center" >
+      <img [src]="artist.images | sinfoto" class="img-thumbnail img-circle">
+      <br>
+    </div>
+    <div class="col-md-9">
+      <h3>
+        {{artist.name}} <small>Popularity {{artist.popularity}}</small>
+      </h3>
+      <hr>
+      <a class="btn btn-outline-success"
+         [href]="artist.external_url?.spotify">
+         See page
+      </a>
+      <a class="btn btn-outline-danger"
+         [routerLink]="['/search']">
+         Back
+      </a>
+    </div>
+
+  </div>
+  <hr>
+  <div *ngIf="songs" class="container">
+    <h3>Top of {{artist.name}}</h3>
+    <hr>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table clas="table table-inverse table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Picture</th>
+                <th>Song</th>
+                <th>Popularity</th>
+                <th>Preview</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let song of songs; let i = index;">
+                <th>{{i+1}}</th>
+                <th>
+                  <img class="img-thumbnail img-circle" height="50px" width="50px"
+                       [src]="song.album?.images | sinfoto" alt="">
+                </th>
+                <th>{{song.name}}</th>
+                <th>{{song.popularity}}%</th>
+                <th>
+                  <iframe [src]="song.uri | domseguro:'https://embed.spotify.com/?uri=' "
+                          width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

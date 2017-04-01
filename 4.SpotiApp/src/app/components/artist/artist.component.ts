@@ -8,7 +8,8 @@ import { SpotifyService } from '../../service/spotify.service';
   styleUrls: ['./artist.component.css']
 })
 export class ArtistComponent implements OnInit {
-  artist:any = {};
+  artist:any;
+  songs:any[];
   constructor( private activatedRoute:ActivatedRoute,
                private _spotifyService:SpotifyService
              ) {
@@ -21,6 +22,7 @@ export class ArtistComponent implements OnInit {
         .subscribe( id =>{
           console.log(id);
           this._spotifyService.getArtist(id).subscribe( data => this.artist = data );
+          this._spotifyService.getTop(id).subscribe( data => {this.songs = data; console.log(this.songs) } );
         }
    )
   }
