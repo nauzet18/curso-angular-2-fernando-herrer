@@ -39,17 +39,17 @@
             </thead>
             <tbody>
               <tr *ngFor="let song of songs; let i = index;">
-                <th>{{i+1}}</th>
-                <th>
+                <td>{{i+1}}</td>
+                <td>
                   <img class="img-thumbnail img-circle" height="50px" width="50px"
                        [src]="song.album?.images | sinfoto" alt="">
-                </th>
-                <th>{{song.name}}</th>
-                <th>{{song.popularity}}%</th>
-                <th>
+                </td>
+                <td>{{song.name}}</td>
+                <td>{{song.popularity}}%</td>
+                <td>
                   <iframe [src]="song.uri | domseguro:'https://embed.spotify.com/?uri=' "
                           width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
-                </th>
+                </td>
               </tr>
             </tbody>
           </table>
